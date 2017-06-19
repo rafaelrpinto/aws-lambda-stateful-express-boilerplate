@@ -8,6 +8,8 @@ Start a local DynamoDB as [described here](https://docs.aws.amazon.com/amazondyn
 
 `npm start`
 
+Then access the app on [localhost](https://localhost:8443).
+
 ### Deploying to AWS
 
 Setup AWS cli as [decribed here](https://docs.aws.amazon.com/lambda/latest/dg/setup.html).

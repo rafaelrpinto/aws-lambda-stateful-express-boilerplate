@@ -4,6 +4,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
+const csrf = require('csurf');
 const AWS = require('aws-sdk');
 const session = require('express-session');
 const DynamoDBStore = require('connect-dynamodb')({ session });
@@ -11,13 +12,15 @@ const index = require('./routes/index');
 
 const app = express();
 
+// trust proxy headers
+app.set('trust proxy', true);
+
 // helmet basic setup
 app.use(helmet());
-// trust proxy headers - required for ssl offloading +  secure cookies
-app.set('trust proxy', true);
 
 // Common session options
 let sessionOptions = {
+  name: 'aCookie',
   secret: 'eVaRuaCnYvWBKUbNWxJsUBwCgzzKManPgUoRcjQfysfVtZmDSsLHuekcWNniTCwt',
   cookie: {
     sameSite: true,
@@ -60,6 +63,14 @@ app.set('view engine', 'hbs');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+// csrf protection
+app.use(csrf({ cookie: false }));
+app.use((req, res, next) => {
+  // make the token avaialble to all render calls
+  res.locals.csrfToken = req.csrfToken();
+  next();
+});
 
 app.use('/', index);
 

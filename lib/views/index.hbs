@@ -1,3 +1,20 @@
 <p>Hi {{user.firstName}} {{user.lastName}}</p>
 <img src="{{user.avatar}}" />
 <p>{{sentence}}</p>
+<input type="button" onclick="doPost()" value="POST" />
+
+<script>
+  function doPost() {
+    $.ajax({
+        method: "POST",
+        url: normalizeUrl("doPost"),
+        data: {
+          name: "John",
+          location: "Boston"
+        }
+      })
+      .done(function(msg) {
+        console.log("Response: " + msg);
+      });
+  }
+</script>
