@@ -13,13 +13,15 @@ const app = express();
 
 // helmet basic setup
 app.use(helmet());
+// trust proxy headers - required for ssl offloading +  secure cookies
+app.set('trust proxy', true);
 
 // Common session options
 let sessionOptions = {
   secret: 'eVaRuaCnYvWBKUbNWxJsUBwCgzzKManPgUoRcjQfysfVtZmDSsLHuekcWNniTCwt',
   cookie: {
     sameSite: true,
-    secure: false, //api gateway makes ssl offloading so express only sees http
+    secure: true,
     maxAge: 600000
   },
   resave: true,
@@ -32,8 +34,7 @@ if (app.get('env') === 'development') {
     store: new DynamoDBStore({
       table: 'local-sessions',
       client: new AWS.DynamoDB({ endpoint: new AWS.Endpoint('http://localhost:8000'), region: 'us-east-1' })
-    }),
-    cookie: {}
+    })
   });
 } else {
   // production session store config
