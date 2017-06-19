@@ -1,7 +1,7 @@
 {
-  "name": "express-lambda",
+  "name": "aws-lambda-stateful-express-boilerplate",
   "version": "1.0.0",
-  "private": true,
+  "url": "https://github.com/rafaelrpinto/aws-lambda-stateful-express-boilerplate",
   "scripts": {
     "start": "NODE_ENV=development nodemon ./lib/bin/www --exec babel-node",
     "debug": "NODE_ENV=development nodemon --inspect ./lib/bin/www --exec",
