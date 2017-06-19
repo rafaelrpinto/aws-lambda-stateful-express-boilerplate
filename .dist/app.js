@@ -1,15 +1,17 @@
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const AWS = require('aws-sdk');
 const session = require('express-session');
-const DynamoDBStore = require('connect-dynamodb')({session});
+const DynamoDBStore = require('connect-dynamodb')({ session });
 const index = require('./routes/index');
 
 const app = express();
 
-// helmet basic setup
+// helmet setup
 app.use(helmet());
 
 // Common session options
@@ -26,20 +28,16 @@ let sessionOptions = {
 
 if (app.get('env') === 'development') {
   // local dynamo session store
-  sessionOptions = {
-    ...sessionOptions,
+  sessionOptions = _extends({}, sessionOptions, {
     store: new DynamoDBStore({
       table: 'local-sessions',
-      client: new AWS.DynamoDB({endpoint: new AWS.Endpoint('http://localhost:8000'), region: 'us-east-1'})
+      client: new AWS.DynamoDB({ endpoint: new AWS.Endpoint('http://localhost:8000'), region: 'us-east-1' })
     }),
-    cookie: {
-      maxAge: 300000
-    }
-  };
+    cookie: {}
+  });
 } else {
   // production session store config
-  sessionOptions = {
-    ...sessionOptions,
+  sessionOptions = _extends({}, sessionOptions, {
     store: new DynamoDBStore({
       table: 'store-sessions',
       reapInterval: 601000,
@@ -48,8 +46,9 @@ if (app.get('env') === 'development') {
       AWSConfigJSON: {
         region: 'eu-west-2'
       }
-    })
-  };
+    }),
+    cookie: {}
+  });
 }
 
 // session middleware
@@ -60,24 +59,22 @@ app.set('views', path.join(__dirname, '../lib/views'));
 app.set('view engine', 'hbs');
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/', index);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   const err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
 
 // error handler
-app.use(function(err, req, res) {
+app.use(function (err, req, res) {
   // set locals, only providing error in development
   res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development'
-    ? err
-    : {};
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
   res.status(err.status || 500);
