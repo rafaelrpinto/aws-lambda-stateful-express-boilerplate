@@ -1,0 +1,12 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "dynamodb:DeleteItem", "dynamodb:GetItem", "dynamodb:PutItem", "dynamodb:CreateTable"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:dynamodb:eu-west-2:*"
+    }
+  ]
+}
