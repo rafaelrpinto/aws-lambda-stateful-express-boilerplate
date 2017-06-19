@@ -6,6 +6,8 @@ Boilerplate for a stateful Express.js application running on AWS Lambda using Ba
 
 ### Deploying to AWS
 
+Replace 'eu-west-2' for the desired region on package.json and run:
+
 `npm run deploy`
 
 ### Updating a deployed app
