@@ -1,4 +1,4 @@
-Boilerplate for a stateful Express.js application running on AWS Lambda using Babel(es2017) and DynamoDB for session synchronization.
+Boilerplate for a stateful Express.js application running on AWS Lambda using Claudia.js, Babel(es2017) and DynamoDB for session synchronization.
 
 ### Running locally
 
