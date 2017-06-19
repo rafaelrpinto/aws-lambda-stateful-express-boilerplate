@@ -3,7 +3,7 @@ const faker = require('faker');
 const cache = require('memory-cache');
 
 const router = express.Router();
-const CACHE_KEY = 'quote-of-the=-day';
+const CACHE_KEY = 'quote-of-the-day';
 
 router.get('/', (req, res) => {
   if (!req.session.user) {
