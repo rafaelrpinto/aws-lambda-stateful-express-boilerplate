@@ -1,5 +1,6 @@
+// This is the lambda entry point
 const awsServerlessExpress = require('aws-serverless-express');
-// Import the transpiled version
+// Import the transpiled version of app
 const app = require('./.dist/app');
 
 const server = awsServerlessExpress.createServer(app);
