@@ -1,6 +1,19 @@
+### Overview
+
 Boilerplate for a stateful Express.js application running on AWS Lambda using Claudia.js, Babel(es2017), Airbnb linting and DynamoDB for session synchronization.
 
 The .dist folder has the transpiled sources from the lib directory. This folder cannot be added to .gitignore otherwise claudia.js will ignore it too and the deploy to AWS will fail.
+
+### Stack
+
+- Claudia.js to deploy/manage AWS assets
+- Babel to transpile code from es2017
+- AirBnb eslint rules
+- DynamoDB for session synchronization
+- csurf for protection against CSRF
+- Helmet.js to prevent several attack vectors
+- Handlebars for server-side templating
+- Local development with dynamodb_local
 
 ### Running locally
 
