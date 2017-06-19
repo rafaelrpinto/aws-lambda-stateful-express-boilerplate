@@ -2,6 +2,8 @@ Boilerplate for a stateful Express.js application running on AWS Lambda using Cl
 
 ### Running locally
 
+Start a local DynamoDB as [described here](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.html) and run:
+
 `npm start`
 
 ### Deploying to AWS
