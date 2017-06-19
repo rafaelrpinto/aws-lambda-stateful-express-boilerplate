@@ -11,7 +11,7 @@ const index = require('./routes/index');
 
 const app = express();
 
-// helmet setup
+// helmet basic setup
 app.use(helmet());
 
 // Common session options
@@ -19,7 +19,7 @@ let sessionOptions = {
   secret: 'eVaRuaCnYvWBKUbNWxJsUBwCgzzKManPgUoRcjQfysfVtZmDSsLHuekcWNniTCwt',
   cookie: {
     sameSite: true,
-    secure: true,
+    secure: false, //api gateway makes ssl offloading so express only sees http
     maxAge: 600000
   },
   resave: true,
@@ -39,15 +39,14 @@ if (app.get('env') === 'development') {
   // production session store config
   sessionOptions = _extends({}, sessionOptions, {
     store: new DynamoDBStore({
-      table: 'store-sessions',
+      table: 'express-sessions',
       reapInterval: 601000,
       readCapacityUnits: 10,
       writeCapacityUnits: 10,
       AWSConfigJSON: {
         region: 'eu-west-2'
       }
-    }),
-    cookie: {}
+    })
   });
 }
 
