@@ -41,7 +41,7 @@ if (app.get('env') === 'development') {
   sessionOptions = _extends({}, sessionOptions, {
     store: new DynamoDBStore({
       table: 'express-sessions',
-      reapInterval: 601000,
+      reapInterval: 100000,
       readCapacityUnits: 10,
       writeCapacityUnits: 10,
       AWSConfigJSON: {

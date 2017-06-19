@@ -13,7 +13,7 @@
   "dependencies": {
     "aws-serverless-express": "^3.0.2",
     "body-parser": "~1.17.1",
-    "connect-dynamodb": "^1.0.11",
+    "connect-dynamodb": "file:///ssdTest/connect-dynamodb",
     "debug": "~2.6.3",
     "express": "~4.15.2",
     "express-session": "^1.15.3",
