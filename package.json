@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "url": "https://github.com/rafaelrpinto/aws-lambda-stateful-express-boilerplate",
   "scripts": {
-    "start": "NODE_ENV=development nodemon -e js,hbs --watch ./lib --watch ./lib/public ./lib/bin/www --exec 'npm run build-dev'",
-    "build-dev": "rm -rf .dist/* && webpack --env=dev --progress --profile --colors && babel-node",
-    "build-prod": "rm -rf .dist/* && webpack --env=prod --progress --profile --colors && babel lib --ignore lib/public -d .dist",
+    "start": "NODE_ENV=development nodemon -e js,hbs --watch ./lib ./lib/server/bin/www --exec 'npm run build-dev'",
+    "build-dev": "rm -rf .dist/* && webpack --progress --profile --colors && babel-node",
+    "build-prod": "rm -rf .dist/* && webpack --progress --profile --colors && babel lib --ignore lib/client -d .dist --copy-files",
     "deploy": "npm run build-prod && claudia create --handler lambda.handler --deploy-proxy-api --region eu-west-2 --policies policies --memory 1024 --profile default --set-env NODE_ENV=production",
     "update": "npm run build-prod && claudia update",
     "destroy": "claudia destroy"

@@ -28,6 +28,8 @@ Replace 'eu-west-2' by the desired region on package.json and policies/access-dy
 
 `npm run deploy`
 
+Don't forget to add a trailing '/' on the lambda URL if you are not using a custom domain, otherwise relative paths won't work.
+
 ### Updating a deployed app
 
 `npm run update`
