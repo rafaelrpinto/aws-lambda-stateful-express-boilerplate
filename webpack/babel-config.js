@@ -2,7 +2,7 @@ module.exports = {
   test: /\.js$/,
   exclude: /(node_modules|bower_components)/,
   use: {
-    loader: 'babel-loader',
+    loader: 'babel-loader?cacheDirectory=true',
     options: {
       presets: [
         'es2017',

@@ -1,6 +1,12 @@
-const path = require('path');
 const webpack = require('webpack');
+const path = require('path');
+const AssetsPlugin = require('assets-webpack-plugin');
 const babelConfig = require('./babel-config');
+
+const assetsPluginInstance = new AssetsPlugin({
+  filename: 'assets.json',
+  path: path.join(__dirname, '../', '.dist')
+});
 
 module.exports = {
   entry: [
@@ -8,7 +14,7 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, '../.dist/public/js'),
-    filename: 'main.js'
+    filename: '[name].[hash].bundle.js'
   },
   plugins: [
     new webpack.LoaderOptionsPlugin({minimize: true, debug: false}),
@@ -22,7 +28,8 @@ module.exports = {
         screw_ie8: true
       },
       comments: false
-    })
+    }),
+    assetsPluginInstance
   ],
   module: {
     rules: [babelConfig]

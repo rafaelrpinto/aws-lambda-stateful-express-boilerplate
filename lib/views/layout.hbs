@@ -25,7 +25,7 @@
 
     // Dynamically loads the script
     jQuery.ajax({
-      url: toAbsoluteURL('static/js/main.js'),
+      url: toAbsoluteURL('static/js/{{assets.main.js}}'),
       dataType: 'script',
       cache: true,
       async: true
