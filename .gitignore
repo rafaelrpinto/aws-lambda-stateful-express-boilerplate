@@ -1,4 +1,4 @@
 # do not add the .dist folder otherwise claudia wont's add it to the package and the deploy will fail
 node_modules
 *.log
-.dist
+.dist/**
