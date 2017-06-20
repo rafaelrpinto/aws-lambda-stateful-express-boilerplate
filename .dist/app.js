@@ -31,6 +31,9 @@ let sessionOptions = {
   saveUninitialized: false
 };
 
+// static files
+app.use('/static', express.static(path.join(__dirname, '../.dist/public')));
+
 if (app.get('env') === 'development') {
   // local dynamo session store
   sessionOptions = _extends({}, sessionOptions, {
