@@ -25,13 +25,22 @@
   "devDependencies": {
     "aws-sdk": "^2.72.0",
     "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.0.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.5.2",
     "babel-preset-latest": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "babel-preset-target": "0.0.5",
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-import": "^2.3.0",
     "nodemon": "^1.11.0",
-    "webpack": "^3.0.0",
-    "webpack-dev-middleware": "^1.10.2"
-  }
+    "webpack": "^3.0.0"
+  },
+  "files": [
+    ".dist",
+    "lambda.js",
+    "lib"
+  ]
 }
