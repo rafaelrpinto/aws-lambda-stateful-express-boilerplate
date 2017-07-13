@@ -18,11 +18,11 @@ Start a local DynamoDB as [described here](https://docs.aws.amazon.com/amazondyn
 
 `npm start`
 
-Then access the app on [localhost](https://localhost:8443).
+Then access the app on [https://localhost:8443](https://localhost:8443).
 
 ### Deploying to AWS
 
-Setup AWS cli as [decribed here](https://docs.aws.amazon.com/lambda/latest/dg/setup.html).
+Setup AWS cli as [described here](https://docs.aws.amazon.com/lambda/latest/dg/setup.html).
 
 Replace 'eu-west-2' by the desired region on package.json and policies/access-dynamodb.json. If the aws cli local profile is different than 'default' you must change the 'deploy' script on package.json to inform the desired profile to claudia.js. Then run:
 
