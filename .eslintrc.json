@@ -8,33 +8,5 @@
         "node": true,
         "es6": true,
         "mocha": true
-    },
-    "rules": {
-        "no-unused-vars": "warn",
-        "no-global-assign": "warn",
-        "semi": "warn",
-        "curly": "warn",
-        "quotes": "warn",
-        "prefer-template": "warn",
-        "arrow-body-style": "warn",
-        "no-param-reassign": "warn",
-        "object-shorthand": "warn",
-        "no-unused-expressions": "warn",
-        "no-use-before-define": "warn",
-        "import/no-extraneous-dependencies": "off",
-        "no-console": "off",
-        "import/newline-after-import": "warn",
-        "class-methods-use-this": "off",
-        "prefer-const": "off",
-        "space-before-function-paren": "off",
-        "comma-dangle": "off",
-        "spaced-comment": "off",
-        "object-curly-spacing": "off",
-        "max-len": "off",
-        "newline-per-chained-call": "off",
-        "func-names": "off",
-        "no-underscore-dangle": "off",
-        "prefer-arrow-callback": "off",
-        "no-plusplus": "off"
     }
 }

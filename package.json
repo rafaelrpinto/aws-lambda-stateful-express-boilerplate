@@ -3,17 +3,17 @@
   "version": "1.0.0",
   "url": "https://github.com/rafaelrpinto/aws-lambda-stateful-express-boilerplate",
   "scripts": {
-    "start": "NODE_ENV=development nodemon -e js,hbs --watch ./lib ./lib/server/bin/www --exec 'npm run build-dev'",
+    "start": "NODE_ENV=development nodemon -e js,hbs --watch ./lib ./lib/server/bin/www --exec 'yarn run build-dev'",
     "build-dev": "rm -rf .dist/* && webpack --progress --profile --colors && babel-node",
     "build-prod": "rm -rf .dist/* && webpack --progress --profile --colors && babel lib --ignore lib/client -d .dist --copy-files",
-    "deploy": "npm run build-prod && claudia create --handler lambda.handler --deploy-proxy-api --region eu-west-2 --policies policies --memory 1024 --profile default --set-env NODE_ENV=production",
-    "update": "npm run build-prod && claudia update",
+    "deploy": "yarn run build-prod && claudia create --handler lambda.handler --deploy-proxy-api --region eu-west-2 --policies policies --memory 1024 --profile default --set-env NODE_ENV=production",
+    "update": "yarn run build-prod && claudia update",
     "destroy": "claudia destroy"
   },
   "dependencies": {
     "aws-serverless-express": "^3.0.2",
     "body-parser": "~1.17.1",
-    "connect-dynamodb": "git://github.com/rafaelrpinto/connect-dynamodb.git#master",
+    "connect-dynamodb": "1.0.12",
     "csurf": "^1.9.0",
     "express": "~4.15.2",
     "express-session": "^1.15.3",

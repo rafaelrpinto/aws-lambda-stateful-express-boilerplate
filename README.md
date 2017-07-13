@@ -11,6 +11,7 @@ Boilerplate for a stateful Express.js application running on AWS Lambda using:
 - Helmet.js to prevent several attack vectors
 - Handlebars for server-side templating
 - Local development with dynamodb_local
+- Yarn for dependency management
 
 ### Running locally
 

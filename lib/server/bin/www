@@ -11,15 +11,16 @@ const path = require('path');
 const PORT = '8443';
 app.set('port', PORT);
 
-
 /**
  * Create HTTPS server.
  */
-const server = https.createServer({
-  key: fs.readFileSync(path.join(__dirname, 'key.pem')),
-  cert: fs.readFileSync(path.join(__dirname, 'key-cert.pem'))
-}, app);
-
+const server = https.createServer(
+  {
+    key: fs.readFileSync(path.join(__dirname, 'key.pem')),
+    cert: fs.readFileSync(path.join(__dirname, 'key-cert.pem')),
+  },
+  app,
+);
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -37,10 +38,12 @@ server.on('error', (error) => {
   // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
+      // eslint-disable-next-line
       console.error(`Port ${PORT} requires elevated privileges`);
       process.exit(1);
       break;
     case 'EADDRINUSE':
+      // eslint-disable-next-line
       console.error(`Port ${PORT} is already in use`);
       process.exit(1);
       break;
@@ -53,5 +56,6 @@ server.on('error', (error) => {
 * Event listener for HTTP server "listening" event.
 */
 server.on('listening', () => {
+  // eslint-disable-next-line
   console.log(`Listening on port ${PORT}`);
 });
