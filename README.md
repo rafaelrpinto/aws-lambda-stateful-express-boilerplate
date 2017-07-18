@@ -1,5 +1,7 @@
 aws-lambda-stateful-express-boilerplate
 ===============
+![Dependencies](https://david-dm.org/rafaelrpinto/aws-lambda-stateful-express-boilerplate.svg) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
+
 Boilerplate for a stateful Express.js application running on AWS Lambda using:
 
 - Claudia.js to deploy/manage AWS assets
