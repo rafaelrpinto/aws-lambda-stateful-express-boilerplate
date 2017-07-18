@@ -1,20 +1,20 @@
 {
   "name": "aws-lambda-stateful-express-boilerplate",
-  "version": "1.0.0",
+  "version": "0.0.0-alpha.1",
   "url": "https://github.com/rafaelrpinto/aws-lambda-stateful-express-boilerplate",
   "scripts": {
     "start": "NODE_ENV=development nodemon -e js,hbs --watch ./lib ./lib/server/bin/www --exec 'yarn run build-dev'",
     "build-dev": "rm -rf .dist/* && webpack --progress --profile --colors && babel-node",
     "build-prod": "rm -rf .dist/* && webpack --progress --profile --colors && babel lib --ignore lib/client -d .dist --copy-files",
-    "deploy": "yarn run build-prod && claudia create --handler lambda.handler --deploy-proxy-api --region eu-west-2 --policies policies --memory 1024 --profile default --set-env NODE_ENV=production",
-    "update": "yarn run build-prod && claudia update",
-    "destroy": "claudia destroy"
+    "deploy": "yarn run build-prod && claudia create --handler lambda.handler --deploy-proxy-api --region $REGION --policies policies --memory 1024 --profile $PROFILE --set-env NODE_ENV=production",
+    "update": "yarn run build-prod && claudia update --profile $PROFILE",
+    "destroy": "claudia destroy --profile $PROFILE"
   },
   "dependencies": {
     "aws-serverless-express": "^3.0.2",
     "body-parser": "~1.17.1",
-    "connect-dynamodb": "1.0.12",
     "csurf": "^1.9.0",
+    "dynamodb-store": "^0.0.1-alpha.4",
     "express": "~4.15.2",
     "express-session": "^1.15.3",
     "faker": "^4.1.0",
@@ -31,7 +31,7 @@
     "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.5.2",
     "babel-preset-latest": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "babel-preset-target": "0.0.5",
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.2.0",

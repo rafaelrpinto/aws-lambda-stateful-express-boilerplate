@@ -39,7 +39,7 @@ const babelConfig = {
     options: {
       presets: [
         'es2017',
-        'stage-2',
+        'stage-0',
         [
           'env', {
             targets: [
