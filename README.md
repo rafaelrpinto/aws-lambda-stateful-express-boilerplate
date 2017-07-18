@@ -17,7 +17,7 @@ Boilerplate for a stateful Express.js application running on AWS Lambda using:
 
 Start a local DynamoDB as [described here](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.html) and run:
 
-`npm start`
+`yarn start`
 
 Then access the app on [https://localhost:8443](https://localhost:8443).
 
