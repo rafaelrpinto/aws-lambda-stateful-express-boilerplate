@@ -29,7 +29,7 @@ Setup AWS cli as [described here](https://docs.aws.amazon.com/lambda/latest/dg/s
 
 Then run:
 
-`REGION=eu-west-2 PROFILE=myProfile yarn run destroy`
+`REGION=eu-west-2 PROFILE=myProfile yarn run deploy`
 
 Don't forget to add a trailing '/' on the lambda URL if you are not using a custom domain, otherwise relative paths won't work.
 
