@@ -1,5 +1,5 @@
-### Overview
-
+aws-lambda-stateful-express-boilerplate
+===============
 Boilerplate for a stateful Express.js application running on AWS Lambda using:
 
 - Claudia.js to deploy/manage AWS assets
@@ -25,16 +25,16 @@ Then access the app on [https://localhost:8443](https://localhost:8443).
 
 Setup AWS cli as [described here](https://docs.aws.amazon.com/lambda/latest/dg/setup.html).
 
-Replace 'eu-west-2' by the desired region on package.json and policies/access-dynamodb.json. If the aws cli local profile is different than 'default' you must change the 'deploy' script on package.json to inform the desired profile to claudia.js. Then run:
+Then run:
 
-`npm run deploy`
+`REGION=eu-west-2 PROFILE=myProfile yarn run destroy`
 
 Don't forget to add a trailing '/' on the lambda URL if you are not using a custom domain, otherwise relative paths won't work.
 
 ### Updating a deployed app
 
-`npm run update`
+`REGION=eu-west-2 PROFILE=myProfile yarn run update`
 
 ### Destroying/undeploying the app
 
-`npm run update`
+`REGION=eu-west-2 PROFILE=myProfile yarn run destroy`

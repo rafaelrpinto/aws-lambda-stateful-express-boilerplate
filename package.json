@@ -1,7 +1,23 @@
 {
   "name": "aws-lambda-stateful-express-boilerplate",
   "version": "0.0.0-alpha.1",
+  "description": "Boilerplate for a stateful Express.js application running on AWS Lambda using Claudia.js, Babel, Webpack, DynamoDB and more.",
+  "author": "Rafael Pinto <raprp@posteo.de>",
+  "main": "lambda.js",
+  "readmeFilename": "README.md",
+  "license": "MIT",
   "url": "https://github.com/rafaelrpinto/aws-lambda-stateful-express-boilerplate",
+  "bugs": {
+    "url": "https://github.com/rafaelrpinto/aws-lambda-stateful-express-boilerplate/issues",
+    "email": "raprp@posteo.de"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rafaelrpinto/aws-lambda-stateful-express-boilerplate.git"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
   "scripts": {
     "start": "NODE_ENV=development nodemon -e js,hbs --watch ./lib ./lib/server/bin/www --exec 'yarn run build-dev'",
     "build-dev": "rm -rf .dist/* && webpack --progress --profile --colors && babel-node",
@@ -39,9 +55,13 @@
     "nodemon": "^1.11.0",
     "webpack": "^3.0.0"
   },
-  "files": [
-    ".dist",
-    "lambda.js",
-    "lib"
+  "files": [".dist", "lambda.js", "lib"],
+  "keywords": [
+    "serverless",
+    "express",
+    "dynamodb",
+    "claudia",
+    "webpack",
+    "babel"
   ]
 }

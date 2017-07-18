@@ -6,7 +6,7 @@
         "dynamodb:DeleteItem", "dynamodb:GetItem", "dynamodb:PutItem", "dynamodb:CreateTable"
       ],
       "Effect": "Allow",
-      "Resource": "arn:aws:dynamodb:eu-west-2:*"
+      "Resource": "arn:aws:dynamodb:*:*"
     }
   ]
 }
