@@ -1,6 +1,6 @@
 {
   "name": "aws-lambda-stateful-express-boilerplate",
-  "version": "0.0.0-alpha.3",
+  "version": "1.0.0",
   "description": "Boilerplate for a stateful Express.js application running on AWS Lambda using Claudia.js, Babel, Webpack, DynamoDB and more.",
   "author": "Rafael Pinto <raprp@posteo.de>",
   "main": "lambda.js",

@@ -1,6 +1,6 @@
 aws-lambda-stateful-express-boilerplate
 ===============
-![Dependencies](https://david-dm.org/rafaelrpinto/aws-lambda-stateful-express-boilerplate.svg) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
+![Dependencies](https://david-dm.org/rafaelrpinto/aws-lambda-stateful-express-boilerplate.svg) ![NPM Downloads](https://img.shields.io/npm/dt/aws-lambda-stateful-express-boilerplate.svg) ![NPM version](https://img.shields.io/npm/v/aws-lambda-stateful-express-boilerplate.svg) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 Boilerplate for a stateful Express.js application running on AWS Lambda using:
 
@@ -17,11 +17,11 @@ Boilerplate for a stateful Express.js application running on AWS Lambda using:
 
 ### Running locally
 
-Start a local DynamoDB as [described here](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.html) and run:
+Start a local DynamoDB or nport **8000** as [described here](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.html) and run:
 
 `yarn start`
 
-Then access the app on [https://localhost:8443](https://localhost:8443).
+Then access the application on [https://localhost:8443](https://localhost:8443).
 
 ### Deploying to AWS
 
@@ -35,8 +35,8 @@ Don't forget to add a trailing '/' on the lambda URL if you are not using a cust
 
 ### Updating a deployed app
 
-`REGION=eu-west-2 PROFILE=myProfile yarn run update`
+`PROFILE=myProfile yarn run update`
 
 ### Destroying/undeploying the app
 
-`REGION=eu-west-2 PROFILE=myProfile yarn run destroy`
+`PROFILE=myProfile yarn run destroy`
