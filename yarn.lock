@@ -1777,9 +1777,9 @@ duplexify@^3.2.0:
     readable-stream "^2.0.0"
     stream-shift "^1.0.0"
 
-dynamodb-store@^0.0.1-beta.2:
-  version "0.0.1-beta.2"
-  resolved "http://npm.nexgent.com:8081/dynamodb-store/-/dynamodb-store-0.0.1-beta.2.tgz#e13bf6a94248b2a6e79d20507b1f50a0a07bb94c"
+dynamodb-store@^0.0.1-beta.3:
+  version "0.0.1-beta.3"
+  resolved "http://npm.nexgent.com:8081/dynamodb-store/-/dynamodb-store-0.0.1-beta.3.tgz#f087d6b0c80511377b63e3a21c2a78e367fadc3e"
   dependencies:
     aws-sdk "^2.86.0"
     babel-runtime "^6.23.0"
