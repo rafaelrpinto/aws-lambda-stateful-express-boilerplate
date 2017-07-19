@@ -30,7 +30,7 @@
     "aws-serverless-express": "^3.0.2",
     "body-parser": "^1.17.2",
     "csurf": "^1.9.0",
-    "dynamodb-store": "^0.0.1-beta.1",
+    "dynamodb-store": "^0.0.1-beta.2",
     "express": "^4.15.3",
     "express-session": "^1.15.3",
     "faker": "^4.1.0",
