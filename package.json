@@ -30,7 +30,6 @@
     "aws-serverless-express": "^3.0.2",
     "body-parser": "^1.17.2",
     "client-sessions": "^0.8.0",
-    "cookie-parser": "^1.4.3",
     "csurf": "^1.9.0",
     "express": "^4.15.3",
     "faker": "^4.1.0",
