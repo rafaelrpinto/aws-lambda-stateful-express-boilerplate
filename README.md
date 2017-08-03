@@ -8,7 +8,7 @@ Boilerplate for a stateful Express.js application running on AWS Lambda using:
 - Babel to transpile code from es2017
 - Webpack to bundle static files
 - AirBnb eslint rules for code styling
-- DynamoDB for session synchronization
+- DynamoDB for session synchronization (or with [mozilla's client-session](https://github.com/rafaelrpinto/aws-lambda-stateful-express-boilerplate/tree/client-session))
 - csurf for protection against CSRF
 - Helmet.js to prevent several attack vectors
 - Handlebars for server-side templating
