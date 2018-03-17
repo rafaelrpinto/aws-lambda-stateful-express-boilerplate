@@ -1,6 +1,6 @@
-aws-lambda-stateful-express-boilerplate
-===============
 ![Dependencies](https://david-dm.org/rafaelrpinto/aws-lambda-stateful-express-boilerplate.svg) ![NPM Downloads](https://img.shields.io/npm/dt/aws-lambda-stateful-express-boilerplate.svg) ![NPM version](https://img.shields.io/npm/v/aws-lambda-stateful-express-boilerplate.svg) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/) ![retire](https://img.shields.io/badge/Retire%20at%2035yo-failing-red.svg)
+
+### Overview
 
 Boilerplate for a stateful Express.js application running on AWS Lambda using:
 
@@ -14,6 +14,8 @@ Boilerplate for a stateful Express.js application running on AWS Lambda using:
 - Handlebars for server-side templating
 - Local development with dynamodb_local
 - Yarn for dependency management
+
+If you are loking for a native serverless boilerplate check [this project](https://github.com/rafaelrpinto/serverless-boilerplate).
 
 ### Running locally
 
