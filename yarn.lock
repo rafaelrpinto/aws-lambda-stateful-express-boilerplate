@@ -1798,12 +1798,13 @@ duplexify@^3.2.0:
     readable-stream "^2.0.0"
     stream-shift "^1.0.0"
 
-dynamodb-store@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.npmjs.org/dynamodb-store/-/dynamodb-store-1.0.6.tgz#cd4f3d4187d09ed202e5a9521cf831df3938ec16"
+dynamodb-store@^1.0.8:
+  version "1.0.8"
+  resolved "http://npm.nexgent.com:8081/dynamodb-store/-/dynamodb-store-1.0.8.tgz#457e70efc1d5910090d9dff0a1ee6401c35391c2"
   dependencies:
-    aws-sdk "^2.100.0"
     express-session "^1.15.5"
+  optionalDependencies:
+    aws-sdk "^2.100.0"
 
 ecc-jsbn@~0.1.1:
   version "0.1.1"

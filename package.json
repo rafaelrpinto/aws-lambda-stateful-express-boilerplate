@@ -22,16 +22,17 @@
     "start": "DYNAMODB_STORE_DEBUG=true NODE_ENV=development nodemon -e js,hbs --watch ./lib ./lib/server/bin/www --exec 'yarn run build-dev'",
     "build-dev": "rm -rf .dist/* && webpack --progress --profile --colors && babel-node",
     "build-prod": "rm -rf .dist/* && webpack --progress --profile --colors && babel lib --ignore lib/client -d .dist --copy-files",
-    "deploy": "yarn run build-prod && claudia create --handler lambda.handler --deploy-proxy-api --region $REGION --policies policies --memory 1024 --profile $PROFILE --set-env NODE_ENV=production",
-    "update": "yarn run build-prod && claudia update --profile $PROFILE",
-    "destroy": "claudia destroy --profile $PROFILE"
+    "deploy": "yarn run build-prod && claudia create --handler lambda.handler --deploy-proxy-api --region $REGION --policies policies --memory 1024 --profile $PROFILE --set-env NODE_ENV=production --no-optional-dependencies",
+    "update": "yarn run build-prod && claudia update --profile $PROFILE --no-optional-dependencies",
+    "destroy": "claudia destroy --profile $PROFILE",
+    "package": "yarn run build-prod && claudia pack --handler lambda.handler --deploy-proxy-api --policies policies --set-env NODE_ENV=production --no-optional-dependencies"
   },
   "dependencies": {
     "aws-serverless-express": "^3.0.2",
     "body-parser": "^1.17.2",
     "client-sessions": "^0.8.0",
     "csurf": "^1.9.0",
-    "dynamodb-store": "^1.0.6",
+    "dynamodb-store": "^1.0.8",
     "express": "^4.15.4",
     "faker": "^4.1.0",
     "hbs": "^4.0.1",
